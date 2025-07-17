@@ -30,11 +30,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{base-url}}customer-list/v1/lead-list/lead-list-by-reveal-id",
+					"raw": "{{base-url}}/customer-list/v1/lead-list/lead-list-by-reveal-id",
 					"host": [
-						"{{base-url}}customer-list"
+						"{{base-url}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"lead-list",
 						"lead-list-by-reveal-id"

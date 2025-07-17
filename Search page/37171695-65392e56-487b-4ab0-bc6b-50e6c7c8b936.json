@@ -337,7 +337,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"type\": \"NEW\",\r\n        \"revealSource\": \"Employee List\",\r\n        \"compGuids\": [\r\n            \"1271AF0FF312470C\"\r\n        ]\r\n    }\r\n}",
+					"raw": "{\r\n    \"data\": {\r\n        \"type\": \"NEW\",\r\n        \"revealSource\": \"Employee List\",\r\n        \"compGuids\": [\r\n            \"BBF9216D5EC3686F\"\r\n        ]\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

@@ -328,7 +328,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"conGuid\": \"AC850B561D335EBE1D198F539E05D751\",\r\n            \"compGuid\": \"BBF9216D5EC3686F\"\r\n        }\r\n    ],\r\n    \"revealSource\": \"Employee List\",\r\n    \"type\": \"NEW\"\r\n}",
+					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"conGuid\": \"13B6E9D8E3A6A973236B7231C1A519EB\",\r\n            \"compGuid\": \"670C7DE7B377B767\"\r\n        }\r\n    ],\r\n    \"revealSource\": \"Employee List\",\r\n    \"type\": \"NEW\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

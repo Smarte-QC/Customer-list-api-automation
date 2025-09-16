@@ -341,11 +341,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v1/account-list/account-reveal",
+					"raw": "{{baseUrl}}/customer-list/v1/account-list/account-reveal",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"account-list",
 						"account-reveal"

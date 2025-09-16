@@ -256,7 +256,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": 9595,\r\n            \"listName\": \"espe\",\r\n            \"conGuids\": [],\r\n            \"contactRevealRequest\": [\r\n                {\r\n                    \"conGuid\": \"8ADF9AA21AB00D8B3964D79BD0F8DF2E\",\r\n                    \"compGuid\": \"840A8DB9959DDB3C\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"id\": 9591,\r\n            \"listName\": \"shashank\",\r\n            \"conGuids\": [],\r\n            \"contactRevealRequest\": [\r\n                {\r\n                    \"conGuid\": \"8ADF9AA21AB00D8B3964D79BD0F8DF2E\",\r\n                    \"compGuid\": \"840A8DB9959DDB3C\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"exportLoading\": false,\r\n    \"revealSource\": \"Contact Profile Page\",\r\n    \"type\": \"NEW\"\r\n}",
+					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": 6539,\r\n            \"listName\": \"123\",\r\n            \"conGuids\": [],\r\n            \"contactRevealRequest\": [\r\n                {\r\n                    \"conGuid\": \"76E20DF520E00B1F8B4B5B83219953CF\",\r\n                    \"compGuid\": \"BEA4DD11006D42FB\"\r\n                }\r\n            ]\r\n        }\r\n    ],\r\n    \"exportLoading\": false,\r\n    \"revealSource\": \"Contact Profile Page\",\r\n    \"type\": \"NEW\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

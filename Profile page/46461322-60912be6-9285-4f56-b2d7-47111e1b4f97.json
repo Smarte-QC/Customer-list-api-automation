@@ -61,7 +61,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"guid\": \"840A8DB9959DDB3C\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"data\": {\r\n        \"guid\": \"E6D37F18EA0ED901\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -69,11 +69,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v1/account-list/lists-by-guid",
+					"raw": "{{baseUrl}}/customer-list/v1/account-list/lists-by-guid",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"account-list",
 						"lists-by-guid"
@@ -177,7 +178,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"840A8DB9959DDB3C\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"E6D37F18EA0ED901\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -216,7 +217,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"840A8DB9959DDB3C\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"E6D37F18EA0ED901\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

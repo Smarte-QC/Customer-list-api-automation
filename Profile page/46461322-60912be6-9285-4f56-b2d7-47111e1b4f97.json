@@ -107,11 +107,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v1/account-list/account-lists-count-guids",
+					"raw": "{{baseUrl}}/customer-list/v1/account-list/account-lists-count-guids",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"account-list",
 						"account-lists-count-guids"
@@ -145,11 +146,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v1/account-signal/signals",
+					"raw": "{{baseUrl}}/customer-list/v1/account-signal/signals",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"account-signal",
 						"signals"
@@ -183,11 +185,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v1/account-signal/signal-category-by-guid",
+					"raw": "{{baseUrl}}/customer-list/v1/account-signal/signal-category-by-guid",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"account-signal",
 						"signal-category-by-guid"
@@ -221,11 +224,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v2/account-list/account-revealed-guid",
+					"raw": "{{baseUrl}}/customer-list/v2/account-list/account-revealed-guid",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v2",
 						"account-list",
 						"account-revealed-guid"
@@ -259,11 +263,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v1/lead-list/add-to-list",
+					"raw": "{{baseUrl}}/customer-list/v1/lead-list/add-to-list",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"lead-list",
 						"add-to-list"
@@ -297,11 +302,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}customer-list/v1/account-list/account-list-save",
+					"raw": "{{baseUrl}}/customer-list/v1/account-list/account-list-save",
 					"host": [
-						"{{baseUrl}}customer-list"
+						"{{baseUrl}}"
 					],
 					"path": [
+						"customer-list",
 						"v1",
 						"account-list",
 						"account-list-save"

@@ -378,7 +378,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"E6D37F18EA0ED901\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"53A15A01E32C8428\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

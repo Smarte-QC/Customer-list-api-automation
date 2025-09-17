@@ -248,7 +248,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"840A8DB9959DDB3C\",\r\n        \"dateRange\": \"ALL\",\r\n        \"categoryDisplayId\": 0\r\n    }\r\n}\r\n// {\r\n//   \"data\": {\r\n//     \"compGuid\": \"EF06CFABB9D847E9\",\r\n//     \"categoryIds\": [15]\r\n//   }\r\n// }",
+					"raw": "{\r\n    \"data\": {\r\n        \"compGuid\": \"53A15A01E32C8428\",\r\n        \"dateRange\": \"ALL\",\r\n        \"categoryDisplayId\": 0\r\n    }\r\n}\r\n// {\r\n//   \"data\": {\r\n//     \"compGuid\": \"EF06CFABB9D847E9\",\r\n//     \"categoryIds\": [15]\r\n//   }\r\n// }",
 					"options": {
 						"raw": {
 							"language": "json"

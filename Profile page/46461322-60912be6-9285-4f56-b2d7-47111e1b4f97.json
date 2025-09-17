@@ -335,6 +335,34 @@
 		},
 		{
 			"name": "account-revealed-guid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "197a6c41-3300-4b19-b861-f6d6a27f62c3",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has content-type header\", function () {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.exist;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is valid JSON\", function () {\r",
+							"    pm.expect(() => pm.response.json()).not.to.throw();\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "46461322-2ed95a45-60b3-4195-b744-3103dacefdf2",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true

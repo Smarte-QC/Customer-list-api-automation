@@ -76,6 +76,35 @@
 		},
 		{
 			"name": "lists-by-guid",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f2dd99be-c548-4a7d-8edb-28143b160c94",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.expect(pm.response.code).to.equal(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is less than 200ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response has Content-Type header\", function () {\r",
+							"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.exist;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body is in JSON format\", function () {\r",
+							"    pm.expect(pm.response.text()).to.be.a(\"string\");\r",
+							"    pm.expect(JSON.parse(pm.response.text())).to.be.an(\"object\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
 			"id": "46461322-1b39155a-c4a8-4a42-b9e6-05a185ab6ae5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true

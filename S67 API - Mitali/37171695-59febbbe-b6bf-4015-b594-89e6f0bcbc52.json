@@ -945,7 +945,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"filter\": \"ALL\",\n        \"searchKeyword\": \"\"\n    },\n    \"pagination\": {\n        \"pageIndex\": 1,\n        \"pageSize\": 25\n    }\n}",
+							"raw": " '{\n    \"data\": {\n        \"leadListId\": \"2\",\n        \"filter\": \"ALL\",\n        \"searchKeyword\": \"\"\n    },\n    \"pagination\": {\n        \"pageIndex\": 1,\n        \"pageSize\": 25\n    }\n}'",
 							"options": {
 								"raw": {
 									"language": "json"

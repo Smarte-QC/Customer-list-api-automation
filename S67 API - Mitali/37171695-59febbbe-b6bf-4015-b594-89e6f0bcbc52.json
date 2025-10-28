@@ -2565,6 +2565,51 @@
 				}
 			],
 			"id": "37171695-b019728d-efd0-4b3d-b40c-a5e87340c996"
+		},
+		{
+			"name": "http://localhost:1000/customer-list/v1/lead-list/lead-records-guids",
+			"id": "37171695-e8df7c2a-9158-4685-a196-d8589b4b39e2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjoyNTYsImFjY291bnQiOnsiaWQiOjE3LCJuYW1lIjoiSksgUUMzIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudERldGFpbHMiOnsicGlJZCI6IjkwMjAzQTUyODQ5NzRDRDNCQUI3MzkxRjREOUFCOTM2IiwiaW5kZXhQcmVmaXgiOiJjY2lfamtfcWMzXzE3Iiwic3NvRW5hYmxlZCI6ZmFsc2V9LCJjbGllbnQiOnsiaWQiOjE1LCJuYW1lIjoiSksgUUMzIiwic3RhdHVzIjoiYWN0aXZlIn0sImNtc1N1YnNjcmlwdGlvbiI6eyJzdGF0dXMiOiJhY3RpdmUiLCJzdWJzY3JpcHRpb25zSWQiOiIzZmRjNjBmMy02NzMxLTQ5NDgtOTczMy1lZTk3M2QzOTIyNWEifSwidW5pZnlJbnREZXRhaWxzIjp7ImN1c3RvbWVyTmFtZSI6IkpLIFFDMyIsImF1dGhUb2tlbiI6IjdlMThiOTBlNWEiLCJpZFBJRCI6IjY4N2YyODM5MmExZTEyZWNjNmYzYThjZiJ9LCJhY2NvdW50Q29uZmlndXJhdGlvbiI6eyJlckFjdGl2ZSI6dHJ1ZSwiZGRsQWN0aXZlIjpmYWxzZSwiYWNjZXNzRG93bmxvYWRzIjp0cnVlLCJhY2Nlc3NUYXJnZXRMaXN0Ijp0cnVlLCJhY2Nlc3NTdXBwcmVzc2lvbkxpc3QiOnRydWUsImFjY2Vzc1ByZXZpb3VzbHlFeHBvcnRlZEVtYWlscyI6dHJ1ZSwiaW50ZWdyYXRpb25zIjp0cnVlLCJlbWFpbFRvbGVyYW5jZUxldmVsIjoiaGlnaCJ9fSwiZW1haWwiOiJ2eWFua2F0ZXNoLnBvb2phcmlAc21hcnRlLnBybyIsInVzZXJOYW1lIjoidnlhbmthdGVzaC5wb29qYXJpQHNtYXJ0ZS5wcm8iLCJmaXJzdE5hbWUiOiJWZW5reSIsImxhc3ROYW1lIjoiUG9vamFyaSIsImRlc2lnbmF0aW9uIjoic2UiLCJzdGF0dXMiOiJhY3RpdmUiLCJyb2xlIjp7Im5hbWUiOiJBZG1pbiJ9LCJsaWNlbnNlVHlwZSI6eyJhbGxvd0J1bGtEb3dubG9hZHMiOnRydWUsImhvdXJseVJldmVhbExpbWl0IjoyNSwibGljZW5zZU5hbWUiOiJIdW50ZXIiLCJtb250aGx5UmV2ZWFsTGltaXQiOjUwMH0sImJ1bGtEb3dubG9hZCI6dHJ1ZSwic3NvRW5hYmxlZCI6ZmFsc2UsImRlZmF1bHRPcmciOnRydWUsImF2YXRhciI6eyJsYXJnZVVybCI6ImlnLWltYWdlcy9Hcm91cC0zNDItYmlnLnBuZyIsInNtYWxsVXJsIjoiaWctaW1hZ2VzL0dyb3VwLTM0Mi5wbmcifSwiZXhpc3RpbmdVc2VyIjpmYWxzZSwiaW50ZXJuYWwiOnRydWUsInVzZXJBY2Nlc3MiOnsiZGlzY292ZXIiOnRydWUsImRhdGFncHQiOnRydWUsImVucmljaCI6dHJ1ZSwicGxheWJvb2siOnRydWV9fSwic3ViIjoidnlhbmthdGVzaC5wb29qYXJpQHNtYXJ0ZS5wcm8iLCJpYXQiOjE3NjA2MTM3ODQsImV4cCI6MTc2MDcwMDE4NH0.lm09n0Kqj7VYBb4DPiD8E7qihVccTJh6cTbi80aqWoMG8dhkfCRJJLlyx6JdfVzB3G2iwxMeKZ4v_TkqxBtifQ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"data\": {\r\n        \"leadListId\": \"2\",\r\n        \"filter\": \"ALL\",\r\n        \"searchKeyword\": \"\"\r\n    },\r\n    \"pagination\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 25\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1000/customer-list/v1/lead-list/lead-records-guids",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1000",
+					"path": [
+						"customer-list",
+						"v1",
+						"lead-list",
+						"lead-records-guids"
+					]
+				},
+				"description": "Generated from cURL: curl --location 'http://localhost:1000/customer-list/v1/lead-list/lead-records-guids' \\\r\n--header 'Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjp7ImlkIjoyNTYsImFjY291bnQiOnsiaWQiOjE3LCJuYW1lIjoiSksgUUMzIiwic3RhdHVzIjoiYWN0aXZlIiwiYWNjb3VudERldGFpbHMiOnsicGlJZCI6IjkwMjAzQTUyODQ5NzRDRDNCQUI3MzkxRjREOUFCOTM2IiwiaW5kZXhQcmVmaXgiOiJjY2lfamtfcWMzXzE3Iiwic3NvRW5hYmxlZCI6ZmFsc2V9LCJjbGllbnQiOnsiaWQiOjE1LCJuYW1lIjoiSksgUUMzIiwic3RhdHVzIjoiYWN0aXZlIn0sImNtc1N1YnNjcmlwdGlvbiI6eyJzdGF0dXMiOiJhY3RpdmUiLCJzdWJzY3JpcHRpb25zSWQiOiIzZmRjNjBmMy02NzMxLTQ5NDgtOTczMy1lZTk3M2QzOTIyNWEifSwidW5pZnlJbnREZXRhaWxzIjp7ImN1c3RvbWVyTmFtZSI6IkpLIFFDMyIsImF1dGhUb2tlbiI6IjdlMThiOTBlNWEiLCJpZFBJRCI6IjY4N2YyODM5MmExZTEyZWNjNmYzYThjZiJ9LCJhY2NvdW50Q29uZmlndXJhdGlvbiI6eyJlckFjdGl2ZSI6dHJ1ZSwiZGRsQWN0aXZlIjpmYWxzZSwiYWNjZXNzRG93bmxvYWRzIjp0cnVlLCJhY2Nlc3NUYXJnZXRMaXN0Ijp0cnVlLCJhY2Nlc3NTdXBwcmVzc2lvbkxpc3QiOnRydWUsImFjY2Vzc1ByZXZpb3VzbHlFeHBvcnRlZEVtYWlscyI6dHJ1ZSwiaW50ZWdyYXRpb25zIjp0cnVlLCJlbWFpbFRvbGVyYW5jZUxldmVsIjoiaGlnaCJ9fSwiZW1haWwiOiJ2eWFua2F0ZXNoLnBvb2phcmlAc21hcnRlLnBybyIsInVzZXJOYW1lIjoidnlhbmthdGVzaC5wb29qYXJpQHNtYXJ0ZS5wcm8iLCJmaXJzdE5hbWUiOiJWZW5reSIsImxhc3ROYW1lIjoiUG9vamFyaSIsImRlc2lnbmF0aW9uIjoic2UiLCJzdGF0dXMiOiJhY3RpdmUiLCJyb2xlIjp7Im5hbWUiOiJBZG1pbiJ9LCJsaWNlbnNlVHlwZSI6eyJhbGxvd0J1bGtEb3dubG9hZHMiOnRydWUsImhvdXJseVJldmVhbExpbWl0IjoyNSwibGljZW5zZU5hbWUiOiJIdW50ZXIiLCJtb250aGx5UmV2ZWFsTGltaXQiOjUwMH0sImJ1bGtEb3dubG9hZCI6dHJ1ZSwic3NvRW5hYmxlZCI6ZmFsc2UsImRlZmF1bHRPcmciOnRydWUsImF2YXRhciI6eyJsYXJnZVVybCI6ImlnLWltYWdlcy9Hcm91cC0zNDItYmlnLnBuZyIsInNtYWxsVXJsIjoiaWctaW1hZ2VzL0dyb3VwLTM0Mi5wbmcifSwiZXhpc3RpbmdVc2VyIjpmYWxzZSwiaW50ZXJuYWwiOnRydWUsInVzZXJBY2Nlc3MiOnsiZGlzY292ZXIiOnRydWUsImRhdGFncHQiOnRydWUsImVucmljaCI6dHJ1ZSwicGxheWJvb2siOnRydWV9fSwic3ViIjoidnlhbmthdGVzaC5wb29qYXJpQHNtYXJ0ZS5wcm8iLCJpYXQiOjE3NjA2MTM3ODQsImV4cCI6MTc2MDcwMDE4NH0.lm09n0Kqj7VYBb4DPiD8E7qihVccTJh6cTbi80aqWoMG8dhkfCRJJLlyx6JdfVzB3G2iwxMeKZ4v_TkqxBtifQ' \\\r\n--header 'Content-Type: application/json' \\\r\n--data '{\r\n    \"data\": {\r\n        \"leadListId\": \"2\",\r\n        \"filter\": \"ALL\",\r\n        \"searchKeyword\": \"\"\r\n    },\r\n    \"pagination\": {\r\n        \"pageIndex\": 1,\r\n        \"pageSize\": 25\r\n    }\r\n}'"
+			},
+			"response": []
 		}
 	]
 }

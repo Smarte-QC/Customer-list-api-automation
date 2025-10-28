@@ -934,7 +934,8 @@
 						"header": [
 							{
 								"key": "Content-Type",
-								"value": "application/json"
+								"value": "application/json",
+								"disabled": true
 							},
 							{
 								"key": "Authorization",
@@ -944,7 +945,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"filter\": \"ALL\",\n        \"searchKeyword\": \"\"\n    },\n    \"pagination\": {\n        \"pageIndex\": 1,\n        \"pageSize\": 25\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"filter\": \"ALL\",\n        \"searchKeyword\": \"\"\n    },\n    \"pagination\": {\n        \"pageIndex\": 1,\n        \"pageSize\": 25\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/v1/lead-list/lead-records-guids",

@@ -953,11 +953,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{base-urlqc3}}/v1/lead-list/lead-records-guids",
+							"raw": "{{base-urlqc3}}/customer-list/v1/lead-list/lead-records-guids",
 							"host": [
 								"{{base-urlqc3}}"
 							],
 							"path": [
+								"customer-list",
 								"v1",
 								"lead-list",
 								"lead-records-guids"

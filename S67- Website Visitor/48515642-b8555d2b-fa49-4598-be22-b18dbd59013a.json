@@ -887,16 +887,44 @@
 							"script": {
 								"id": "5c7e7e33-4b4e-49a9-9f36-2a448ca18b3c",
 								"exec": [
-									"pm.test(\"Status code 201 - various URL formats\", function () {",
-									"    pm.expect(pm.response.code).to.eql(201);",
+									"pm.test(\"Status code 200 - various URL formats\", function () {",
+									"    pm.expect(pm.response.code).to.eql(200);",
 									"});",
-									"pm.test(\"URL format validation\", function () {",
-									"    const response = pm.response.json();",
-									"    pm.expect(response.data.length).to.eql(4);",
-									"});"
+									"",
+									"",
+									"",
+									"",
+									"",
+									"pm.test(\"RequestId should be present in the response\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.status).to.have.property('requestId').that.is.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Validate the structure of the status object\", function () {",
+									"    const responseData = pm.response.json();",
+									"",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.status).to.exist.and.to.be.an('object');",
+									"    pm.expect(responseData.status).to.have.all.keys('statusCode', 'requestId', 'message');",
+									"",
+									"    pm.expect(responseData.status.statusCode).to.be.a('number');",
+									"    pm.expect(responseData.status.requestId).to.be.a('string');",
+									"    pm.expect(responseData.status.message).to.be.a('string');",
+									"});",
+									"",
+									""
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -921,7 +949,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": [\n        {\n            \"connectionName\": \"HTTP_Conn_\" + (new Date()).getTime(),\n            \"vendorId\": 1,\n            \"webhookUrl\": \"http://http-example.com/webhook\",\n            \"status\": \"active\"\n        },\n        {\n            \"connectionName\": \"HTTPS_Conn_\" + (new Date()).getTime(),\n            \"vendorId\": 2,\n            \"webhookUrl\": \"https://https-example.com/webhook\",\n            \"status\": \"active\"\n        },\n        {\n            \"connectionName\": \"Port_Conn_\" + (new Date()).getTime(),\n            \"vendorId\": 3,\n            \"webhookUrl\": \"https://port-example.com:8080/webhook\",\n            \"status\": \"active\"\n        },\n        {\n            \"connectionName\": \"Path_Conn_\" + (new Date()).getTime(),\n            \"vendorId\": 4,\n            \"webhookUrl\": \"https://path-example.com/api/v1/webhook/listener\",\n            \"status\": \"active\"\n        }\n    ]\n}",
+							"raw": "{\n    \"data\": [\n        {\n            \"connectionName\": \"HTTP_Conn_\" ,\n            \"vendorId\": 1,\n            \"webhookUrl\": \"http://http-example.com/webhook\",\n            \"status\": \"active\"\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"

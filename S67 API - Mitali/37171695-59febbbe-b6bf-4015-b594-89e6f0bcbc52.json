@@ -92,7 +92,7 @@
 									"});",
 									"var responseJSON = pm.response.json();",
 									"",
-									"pm.test(\"Contact count is equal to expected value\", function () {",
+									"pm.test(\"Company count is equal to expected value\", function () {",
 									"    const responseData = pm.response.json();",
 									"    pm.expect(responseData.data.company_count).to.equal('5080');",
 									"});",

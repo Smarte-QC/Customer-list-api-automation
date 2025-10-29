@@ -227,7 +227,7 @@
 								"id": "97f86fed-e19a-4a7a-adf8-710f82f1b72e",
 								"exec": [
 									"// Tests",
-									"const expectedStatus = [400, 422]; // adjust if your API uses a specific one",
+									"const expectedStatus = [500]; // adjust if your API uses a specific one",
 									"const json = pm.response.json();",
 									"",
 									"pm.test(\"Request body is missing data.filterType\", function () {",

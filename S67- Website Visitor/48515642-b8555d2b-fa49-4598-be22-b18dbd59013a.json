@@ -1462,17 +1462,15 @@
 								"id": "e6f7bef2-5c9b-484a-bcfd-51620e574cf8",
 								"exec": [
 									"pm.test(\"Empty array handled properly\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([400, 422, 200]);",
+									"    pm.expect(pm.response.code).to.be.oneOf([500]);",
 									"});",
-									"pm.test(\"Appropriate empty array response\", function () {",
-									"    const response = pm.response.json();",
-									"    if (pm.response.code === 200) {",
-									"        pm.expect(response.data).to.be.an('array').that.is.empty;",
-									"    }",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],

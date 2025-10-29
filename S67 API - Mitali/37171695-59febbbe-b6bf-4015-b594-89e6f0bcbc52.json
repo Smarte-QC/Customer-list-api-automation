@@ -255,7 +255,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"In past 6 months\",\n                \"value\": 6,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"In past 9 months\",\n                \"value\": ,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/search/v4/advanced-search-count",

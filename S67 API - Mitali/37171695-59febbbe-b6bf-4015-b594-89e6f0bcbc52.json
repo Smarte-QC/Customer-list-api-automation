@@ -250,7 +250,7 @@
 									"  }",
 									"});",
 									"",
-									"pm.test(\"Response body has message 'Saved Search Lead NOT Found or Don't have access for the provided ID'\", function () {",
+									"pm.test(\"Response body has message 'Missing filter'\", function () {",
 									"    const res = pm.response.json();",
 									" ",
 									"    // Ensure status object exists",

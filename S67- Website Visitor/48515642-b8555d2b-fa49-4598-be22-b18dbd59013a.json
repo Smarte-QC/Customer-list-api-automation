@@ -1059,10 +1059,14 @@
 									"pm.test(\"Enable operation success\", function () {",
 									"    const response = pm.response.json();",
 									"    pm.expect(response.status.message.toLowerCase()).to.include('success');",
+									"});",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],

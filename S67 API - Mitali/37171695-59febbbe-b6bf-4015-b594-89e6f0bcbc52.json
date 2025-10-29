@@ -10,6 +10,52 @@
 			"item": [
 				{
 					"name": "Advanced Search Count(Last Funding Date Filter)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "5c649cef-4dde-4a1c-ac1a-2f050a1adee7",
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Status message should be 'Success'\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.exist.and.to.have.property('message').that.equals('Success');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Company count equals '18370'\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.data.company_count).to.equal('18370');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Contact count equals '9175447'\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.data).to.be.an('object');\r",
+									"    pm.expect(responseData.data.contact_count).to.equal('9175447');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response contains required fields - status and data\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.all.keys('status', 'data');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "37171695-28e442c6-1844-42b0-adbf-fc04aa587f33",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true

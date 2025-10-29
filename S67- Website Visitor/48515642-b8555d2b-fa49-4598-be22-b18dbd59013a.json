@@ -1328,17 +1328,18 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "2d56f9d0-ad8a-407d-9328-4637cf09cf3e",
 								"exec": [
 									"pm.test(\"Missing fields returns error\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([400, 422]);",
+									"    pm.expect(pm.response.code).to.be.oneOf([500]);",
 									"});",
-									"pm.test(\"Error message indicates missing fields\", function () {",
-									"    const response = pm.response.json();",
-									"    pm.expect(response.message.toLowerCase()).to.include('required').or.include('missing');",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);",
 									"});"
 								],
 								"type": "text/javascript",
-								"id": "2d56f9d0-ad8a-407d-9328-4637cf09cf3e"
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],

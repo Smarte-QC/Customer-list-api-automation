@@ -238,9 +238,11 @@
 									"        properties: {",
 									"          message: { type: \"string\" },",
 									"          requestId: { type: \"string\" },",
-									"          statusCode: { type: \"integer\" }",
+									"          statusCode: { type: \"integer\" },",
+									"          name: { type: \"string\", minLength: 1 }, // Added check for non-empty string 'name'",
+									"          value: { type: \"number\" } // Added check for 'value' field to ensure it is a number",
 									"        },",
-									"        required: [\"message\", \"requestId\", \"statusCode\"]",
+									"        required: [\"message\", \"requestId\", \"statusCode\", \"name\", \"value\"] // Updated required fields",
 									"      }",
 									"    },",
 									"    required: [\"status\"]",
@@ -277,7 +279,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"\",\n                \"value\": ,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"In past 9 months\",\n                \"value\":9,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/search/v4/advanced-search-count",

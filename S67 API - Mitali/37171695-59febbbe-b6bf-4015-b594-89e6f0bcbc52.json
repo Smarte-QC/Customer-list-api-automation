@@ -89,7 +89,7 @@
 									"pm.test(\"Contact count is equal to expected value\", function () {",
 									"    const responseData = pm.response.json();",
 									"    pm.expect(responseData.data.contact_count).to.equal('3413595');",
-									"    pm.expect(responseData.data.contact_count).to.equal('5080');",
+									"    pm.expect(responseData.data.company_count).to.equal('5080');",
 									"});",
 									"var responseJSON = pm.response.json();",
 									"",

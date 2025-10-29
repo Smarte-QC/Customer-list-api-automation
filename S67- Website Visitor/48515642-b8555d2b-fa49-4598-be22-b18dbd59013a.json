@@ -252,13 +252,22 @@
 									"pm.test(\"Status code 200 with filters\", function () {",
 									"    pm.expect(pm.response.code).to.equal(200);",
 									"});",
-									"pm.test(\"Filtered response structure\", function () {",
+									"",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"pm.test(\"Response contains 'id' and 'name'\", function () {",
 									"    const jsonData = pm.response.json();",
-									"    pm.expect(jsonData.vendors).to.be.an('array');",
-									"});"
+									"    jsonData.data.forEach(function (vendor) {",
+									"        pm.expect(vendor).to.have.all.keys('id', 'name');",
+									"    });",
+									"});",
+									""
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],

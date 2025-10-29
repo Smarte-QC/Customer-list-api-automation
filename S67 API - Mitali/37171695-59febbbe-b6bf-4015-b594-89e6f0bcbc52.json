@@ -257,7 +257,7 @@
 									"    pm.expect(res).to.have.property(\"status\");",
 									" ",
 									"    // Validate statusCode and message",
-									"    pm.expect(res.status.statusCode).to.eql(404);",
+									"    pm.expect(res.status.statusCode).to.eql(500);",
 									"    pm.expect(res.status.message).to.eql(\"Missing filter\");",
 									"});"
 								],

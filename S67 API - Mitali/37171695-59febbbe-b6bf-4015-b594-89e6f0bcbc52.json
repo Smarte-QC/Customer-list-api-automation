@@ -228,7 +228,29 @@
 								"exec": [
 									"pm.test('Status code should not be 200', function () {pm.expect(pm.response.code).not.eql(200);});",
 									"const response = pm.response.json();",
-									"pm.test('Should return validation error', function () {pm.expect(response.status.message).to.match(/error|missing|invalid/i);});"
+									"pm.test('Should return validation error', function () {pm.expect(response.status.message).to.match(/error|missing|invalid/i);});",
+									"pm.test(\"Schema is valid\", function () {",
+									"  var schema = {",
+									"    type: \"object\",",
+									"    properties: {",
+									"      status: {",
+									"        type: \"object\",",
+									"        properties: {",
+									"          message: { type: \"string\" },",
+									"          requestId: { type: \"string\" },",
+									"          statusCode: { type: \"integer\" }",
+									"        },",
+									"        required: [\"message\", \"requestId\", \"statusCode\"]",
+									"      }",
+									"    },",
+									"    required: [\"status\"]",
+									"  };",
+									"",
+									"  pm.expect(response).to.have.property('status'); // Check for presence of 'status' field",
+									"  var response = pm.response.json();",
+									"  pm.expect(tv4.validate(response, schema)).to.be.true;",
+									"});",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -255,7 +277,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"In past 9 months\",\n                \"value\": 9,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"\",\n                \"value\": ,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/search/v4/advanced-search-count",

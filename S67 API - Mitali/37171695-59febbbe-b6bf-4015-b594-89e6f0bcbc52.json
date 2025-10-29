@@ -536,7 +536,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"pagination\": {\n        \"pageSize\": -10\n    }\n}"
+							"raw": "{\n    \"pagination\": {\n        \"pageSize\": 10\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/customer-data/v1/user-page-preferences/save-page-preferences",

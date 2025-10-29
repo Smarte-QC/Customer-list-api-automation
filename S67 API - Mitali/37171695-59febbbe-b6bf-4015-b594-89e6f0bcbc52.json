@@ -258,7 +258,7 @@
 									" ",
 									"    // Validate statusCode and message",
 									"    pm.expect(res.status.statusCode).to.eql(500);",
-									"    pm.expect(res.status.message).to.eql(\"Missing filter\");",
+									"    pm.expect(res.status.message).to.eql(\"Technical failure\");",
 									"});"
 								],
 								"type": "text/javascript",

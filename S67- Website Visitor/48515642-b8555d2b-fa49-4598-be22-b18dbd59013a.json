@@ -169,13 +169,32 @@
 									"pm.test(\"Status code 200 with pagination\", function () {",
 									"    pm.expect(pm.response.code).to.equal(200);",
 									"});",
-									"pm.test(\"Vendors array present\", function () {",
+									"",
+									"// Test for response time",
+									"pm.test(\"Response time is less than 500ms\", function () {",
+									"    pm.expect(pm.response.responseTime).to.be.below(500);",
+									"});",
+									"",
+									"// Test for presence of 'id' in the data array",
+									"pm.test(\"Each vendor has an 'id'\", function () {",
 									"    const jsonData = pm.response.json();",
-									"    pm.expect(jsonData.vendors).to.be.an('array');",
-									"});"
+									"    jsonData.data.forEach(function (vendor) {",
+									"        pm.expect(vendor).to.have.property('id');",
+									"    });",
+									"});",
+									"",
+									"// Test for presence of 'name' in the data array",
+									"pm.test(\"Each vendor has a 'name'\", function () {",
+									"    const jsonData = pm.response.json();",
+									"    jsonData.data.forEach(function (vendor) {",
+									"        pm.expect(vendor).to.have.property('name');",
+									"    });",
+									"});",
+									""
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],

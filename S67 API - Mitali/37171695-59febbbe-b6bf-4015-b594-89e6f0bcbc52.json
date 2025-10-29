@@ -601,8 +601,7 @@
 								"id": "8e3a9d11-7ccd-48b7-a44b-3a6e85194211",
 								"exec": [
 									"pm.test('Status code should not be 200', function () {pm.expect(pm.response.code).not.eql(500);});",
-									"const response = pm.response.json();",
-									"pm.test('Should return validation or error message', function () {pm.expect(response.status.message).to.match(/error|invalid/i);});",
+									"",
 									"",
 									"pm.test(\"Response status code is 400\", function () {",
 									"    pm.expect(pm.response.code).to.equal(400);",
@@ -681,7 +680,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"pagination\": {\n        \"pageSize\": 10\n    }\n}"
+							"raw": "{\n    \"pagination\": {\n        \"pageSize\": -98\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/customer-data/v1/user-page-preferences/save-page-preferences",

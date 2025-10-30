@@ -2194,9 +2194,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{base-urlqc3}}/search/v4/advanced-search",
+							"raw": "{{base_Url}}/search/v4/advanced-search",
 							"host": [
-								"{{base-urlqc3}}"
+								"{{base_Url}}"
 							],
 							"path": [
 								"search",

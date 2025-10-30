@@ -1735,15 +1735,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{base-url}}/customer-list/v1/website-visitors/connection-create",
+							"raw": "{{base-url}}/customer-list/v1/lead-list/retrieve-connections-image-url",
 							"host": [
 								"{{base-url}}"
 							],
 							"path": [
 								"customer-list",
 								"v1",
-								"website-visitors",
-								"connection-create"
+								"lead-list",
+								"retrieve-connections-image-url"
 							]
 						}
 					},

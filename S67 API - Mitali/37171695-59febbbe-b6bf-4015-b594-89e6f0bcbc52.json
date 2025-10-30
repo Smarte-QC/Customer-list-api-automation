@@ -382,6 +382,78 @@
 			"item": [
 				{
 					"name": "Advanced Search(Last Funding Date Filter)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "88b53a33-3ada-4691-a61a-ac62b721e365",
+								"exec": [
+									"pm.test(\"Response status code is 500\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(500);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response message is 'Technical Failure'\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.exist;\r",
+									"    pm.expect(responseData.status.message).to.equal('Technical Failure');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"The requestId must be a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.exist;\r",
+									"    pm.expect(responseData.status.requestId).to.exist.and.to.be.a('string').and.to.have.lengthOf.at.least(1, \"requestId should not be empty\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Ensure statusCode is 0\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.exist;\r",
+									"    pm.expect(responseData.status.statusCode).to.equal(0);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Validate lastFundingDate is within the past 6, 12, and 18 months\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.exist;\r",
+									"\r",
+									"    const currentDate = new Date();\r",
+									"    const sixMonthsAgo = new Date(currentDate);\r",
+									"    sixMonthsAgo.setMonth(currentDate.getMonth() - 6);\r",
+									"    \r",
+									"    const twelveMonthsAgo = new Date(currentDate);\r",
+									"    twelveMonthsAgo.setMonth(currentDate.getMonth() - 12);\r",
+									"    \r",
+									"    const eighteenMonthsAgo = new Date(currentDate);\r",
+									"    eighteenMonthsAgo.setMonth(currentDate.getMonth() - 18);\r",
+									"    \r",
+									"    if (responseData.lastFundingDate) {\r",
+									"        const lastFundingDate = new Date(responseData.lastFundingDate);\r",
+									"        \r",
+									"        pm.expect(lastFundingDate).to.be.within(eighteenMonthsAgo, currentDate, 'lastFundingDate should be within the last 18 months');\r",
+									"        pm.expect(lastFundingDate).to.be.within(twelveMonthsAgo, currentDate, 'lastFundingDate should be within the last 12 months');\r",
+									"        pm.expect(lastFundingDate).to.be.within(sixMonthsAgo, currentDate, 'lastFundingDate should be within the last 6 months');\r",
+									"    } else {\r",
+									"        pm.expect.fail(\"lastFundingDate does not exist in the response\");\r",
+									"    }\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "37171695-a046b956-2ad1-4982-a3b1-5b4affabe968",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -397,7 +469,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"data\": {\r\n        \"filterType\": \"Applied Search\",\r\n        \"funding\": {\r\n            \"lastFundingDate\": {\r\n                \"id\": 2,\r\n                \"tempId\": 0,\r\n                \"name\": \"In past 9 months\",\r\n                \"value\": 9,\r\n                \"type\": \"INCLUDE\"\r\n            }\r\n        }\r\n    },\r\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\r\n    \"pagination\": {\r\n        \"page_no\": 1,\r\n        \"page_size\": 10\r\n    }\r\n}",
+							"raw": "{\r\n    \"data\": {\r\n        \"filterType\": \"Applied Search\",\r\n        \"funding\": {\r\n            \"lastFundingDate\": {\r\n                \"id\": 2,\r\n                \"tempId\": 0,\r\n                \"name\": \"In past 6 months\",\r\n                \"value\":6,\r\n                \"type\": \"INCLUDE\"\r\n            }\r\n        }\r\n    },\r\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\r\n    \"pagination\": {\r\n        \"page_no\": 1,\r\n        \"page_size\": 10\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

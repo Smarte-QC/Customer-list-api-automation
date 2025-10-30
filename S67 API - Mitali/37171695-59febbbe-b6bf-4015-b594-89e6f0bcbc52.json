@@ -2023,9 +2023,27 @@
 							"script": {
 								"id": "19cda53c-bdcc-4f56-a44a-42418131a7e2",
 								"exec": [
-									"pm.test('Status code should not be 200', function () {pm.expect(pm.response.code).not.eql(200);});",
-									"const response = pm.response.json();",
-									"pm.test('Should return error or validation message', function () {pm.expect(response.status.message).to.match(/error|validation/i);});"
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"pm.test(\"Response has a valid structure\", function () {",
+									"    const jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.have.property(\"status\");",
+									"    pm.expect(jsonData.status.statusCode).to.equal(200);",
+									"    pm.expect(jsonData).to.have.property(\"data\");",
+									"    pm.expect(jsonData.data).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"Each item contains required fields\", function () {",
+									"    const jsonData = pm.response.json();",
+									"    jsonData.data.forEach(item => {",
+									"        pm.expect(item).to.have.property(\"name\");",
+									"        pm.expect(item).to.have.property(\"source\");",
+									"     ",
+									"    });",
+									"});",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -2055,9 +2073,9 @@
 							"raw": "{\n    \"data\": {\n        \"value\": \"\"\n    },\n    \"type\": \"BY_REGION\",\n    \"pagination\": {\n        \"page_size\": 0,\n        \"page_no\": 1\n    }\n}"
 						},
 						"url": {
-							"raw": "{{base-urlqc3}}/search/v4/generic/location",
+							"raw": "{{base_Url}}/search/v4/generic/location",
 							"host": [
-								"{{base-urlqc3}}"
+								"{{base_Url}}"
 							],
 							"path": [
 								"search",

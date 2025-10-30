@@ -1162,7 +1162,7 @@
 									"});\r",
 									"\r",
 									"// 4) Page size is equal to 1\r",
-									"pm.test(\"Page size is equal to 1\", function () {\r",
+									"pm.test(\"Page size is equal to 10\", function () {\r",
 									"  pm.expect(res).to.be.an('object');\r",
 									"  pm.expect(res).to.have.property('data').that.is.an('object');\r",
 									"  pm.expect(res.data).to.have.property('pageSize');\r",

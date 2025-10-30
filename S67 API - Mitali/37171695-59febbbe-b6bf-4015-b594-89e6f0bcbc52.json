@@ -2897,9 +2897,9 @@
 							"raw": "{\n    \"data\": {\n        \"filterType\": \"Applied Search\"\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
 						},
 						"url": {
-							"raw": "{{base-url}}/search/v4/advanced-search-count",
+							"raw": "{{base-urlqc3}}/search/v4/advanced-search-count",
 							"host": [
-								"{{base-url}}"
+								"{{base-urlqc3}}"
 							],
 							"path": [
 								"search",

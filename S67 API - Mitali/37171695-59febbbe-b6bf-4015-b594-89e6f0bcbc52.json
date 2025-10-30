@@ -2015,6 +2015,56 @@
 			"item": [
 				{
 					"name": "Save Search Lead(Last Funding Date Filter)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "7a3455d0-be0c-4d8d-bdbf-fcfaf0f9366e",
+								"exec": [
+									"// --- Simple Postman Tests (short & tolerant) ---\r",
+									"\r",
+									"// 1) HTTP OK\r",
+									"pm.test(\"Status code is 200\", () => pm.response.to.have.status(200));\r",
+									"\r",
+									"// 2) Response is JSON + has status object\r",
+									"let res = {};\r",
+									"pm.test(\"Response is JSON with status\", () => {\r",
+									"  res = pm.response.json();\r",
+									"  pm.expect(res).to.be.an(\"object\");\r",
+									"  pm.expect(res).to.have.property(\"status\").that.is.an(\"object\");\r",
+									"  pm.expect(res.status).to.have.property(\"statusCode\").that.is.a(\"number\");\r",
+									"  pm.expect(res.status).to.have.property(\"message\").that.is.a(\"string\");\r",
+									"});\r",
+									"\r",
+									"// 3) Request basics: data.name present (non-empty string)\r",
+									"let req = {};\r",
+									"pm.test(\"Request has data.name\", () => {\r",
+									"  try { req = JSON.parse(pm.request?.body?.raw || \"{}\"); } catch { req = {}; }\r",
+									"  pm.expect(req).to.have.property(\"data\").that.is.an(\"object\");\r",
+									"  pm.expect(req.data).to.have.property(\"name\").that.is.a(\"string\").and.not.empty;\r",
+									"});\r",
+									"\r",
+									"// 4) lastFundingDate exists with required fields\r",
+									"pm.test(\"Request has lastFundingDate with required fields\", () => {\r",
+									"  const lfd = req?.data?.filterJson?.funding?.lastFundingDate;\r",
+									"  pm.expect(lfd).to.be.an(\"object\");\r",
+									"  pm.expect(lfd).to.include.all.keys(\"id\", \"tempId\", \"name\", \"value\", \"type\");\r",
+									"});\r",
+									"\r",
+									"// 5) lastFundingDate simple rules (enum + allowed values)\r",
+									"pm.test(\"lastFundingDate type/value are valid\", () => {\r",
+									"  const lfd = req?.data?.filterJson?.funding?.lastFundingDate || {};\r",
+									"  pm.expect([\"INCLUDE\", \"EXCLUDE\"]).to.include(lfd.type);\r",
+									"  pm.expect([6, 12, 18]).to.include(lfd.value); // adjust if your API allows others\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "37171695-bb75d021-35b0-4156-b184-319f91128165",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2038,7 +2088,7 @@
 							}
 						},
 						"url": {
-							"raw": "{{base-urlqc3}}/customer-data/v2/contact-filter/v2/search-lead",
+							"raw": "{{base-urlqc3}}/customer-data/v2/contact-filter/search-lead",
 							"host": [
 								"{{base-urlqc3}}"
 							],
@@ -2046,7 +2096,6 @@
 								"customer-data",
 								"v2",
 								"contact-filter",
-								"v2",
 								"search-lead"
 							]
 						}

@@ -1134,7 +1134,11 @@
 							"script": {
 								"id": "a050f154-2b23-46e4-9e6d-1a164fd91ce4",
 								"exec": [
-									""
+									"pm.test('Status code is 200', function () {pm.response.to.have.status(200);});",
+									"pm.test('Response time is under 300ms', function () {pm.expect(pm.response.responseTime).to.be.below(300);});",
+									"const response = pm.response.json();",
+									"pm.test('Response message is Success', function () {pm.expect(response.status.message).to.eql('Success');});",
+									"pm.test('Page size is negative', function () {pm.expect(response.data.pageSize).to.be.a('number');});"
 								],
 								"type": "text/javascript",
 								"packages": {},

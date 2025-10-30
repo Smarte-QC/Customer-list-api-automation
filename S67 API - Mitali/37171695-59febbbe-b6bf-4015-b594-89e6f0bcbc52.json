@@ -2639,9 +2639,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_Url}}/search/v4/advanced-search-count",
+							"raw": "{{base-urlqc3}}/search/v4/advanced-search-count",
 							"host": [
-								"{{base_Url}}"
+								"{{base-urlqc3}}"
 							],
 							"path": [
 								"search",

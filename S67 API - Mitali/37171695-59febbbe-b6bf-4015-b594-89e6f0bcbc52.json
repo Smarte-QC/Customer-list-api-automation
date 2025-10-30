@@ -2562,6 +2562,60 @@
 				},
 				{
 					"name": "Advanced Search Count(Location Filter)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "1b209051-f40b-4e2b-ae2d-0e63d26e3f8d",
+								"exec": [
+									"const response = pm.response.json();\r",
+									"\r",
+									"// Test for status code\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"// Test for response structure\r",
+									"pm.test(\"Response has status and data properties\", function () {\r",
+									"    pm.expect(response).to.have.property('status');\r",
+									"    pm.expect(response).to.have.property('data');\r",
+									"});\r",
+									"\r",
+									"// Test for status property structure\r",
+									"pm.test(\"Status property has message, requestId, and statusCode\", function () {\r",
+									"    pm.expect(response.status).to.have.property('message');\r",
+									"    pm.expect(response.status).to.have.property('requestId');\r",
+									"    pm.expect(response.status).to.have.property('statusCode');\r",
+									"});\r",
+									"\r",
+									"// Test for data property structure\r",
+									"pm.test(\"Data property has company_count and contact_count\", function () {\r",
+									"    pm.expect(response.data).to.have.property('company_count');\r",
+									"    pm.expect(response.data).to.have.property('contact_count');\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Company count equals '4016565'\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"   \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.data.company_count).to.equal('4016565');\r",
+									"});\r",
+									" \r",
+									"pm.test(\"Contact count equals '60166598'\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"   \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.data).to.be.an('object');\r",
+									"    pm.expect(responseData.data.contact_count).to.equal('60166598');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "37171695-c762ddb8-9743-4f9c-8b43-b573b529a084",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2575,10 +2629,19 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"filterType\": \"Applied Search\",\r\n        \"person_info\": {\r\n            \"location\": {\r\n                \"regions\": [\r\n                    {\r\n                        \"name\": \"North America\",\r\n                        \"source\": \"Region\",\r\n                        \"id\": \"North America\",\r\n                        \"type\": \"INCLUDE\"\r\n                    }\r\n                ],\r\n                \"type\": \"By Region\"\r\n            }\r\n        }\r\n    },\r\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\r\n    \"pagination\": {\r\n        \"page_no\": 1,\r\n        \"page_size\": 50\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{base-urlqc3}}/search/v4/advanced-search-count",
+							"raw": "{{base_Url}}/search/v4/advanced-search-count",
 							"host": [
-								"{{base-urlqc3}}"
+								"{{base_Url}}"
 							],
 							"path": [
 								"search",

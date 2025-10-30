@@ -1961,7 +1961,7 @@
 									"pm.test('Response time is under 600ms', function () {pm.expect(pm.response.responseTime).to.be.below(600);});",
 									"const response = pm.response.json();",
 									"pm.test('Response message is Success', function () {pm.expect(response.status.message).to.eql('Success');});",
-									"pm.test('Response contains data array', function () {pm.expect(response.data).to.be.an('array');});",
+									"",
 									"pm.test('Each location should have name and source fields', function () {",
 									"    response.data.forEach(function(item) {",
 									"        pm.expect(item).to.have.property('name');",

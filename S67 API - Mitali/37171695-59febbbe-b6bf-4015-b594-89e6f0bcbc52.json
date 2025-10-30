@@ -613,11 +613,14 @@
 							"script": {
 								"id": "d1cbd875-d4c7-4a13-b55f-53d88c4f2cdc",
 								"exec": [
-									"pm.test('Should return error for invalid type', function () {pm.expect(pm.response.code).to.be.oneOf([200]);});\r",
+									"pm.test('Should return error for invalid type', function () {pm.expect(pm.response.code).to.be.oneOf([500]);});\r",
 									"pm.test(\"Validate lastFundingDate value in request body\", function () {\r",
 									"    const requestBody = pm.request.json();\r",
 									"    const allowedValues = [6, 12, 18];\r",
 									"    pm.expect(allowedValues).to.include(requestBody.lastFundingDate, \"lastFundingDate must be 6, 12, or 18 months\");\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);\r",
 									"});"
 								],
 								"type": "text/javascript",
@@ -645,7 +648,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"filterType\": \"Applied Search\",\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"In past 6 months\",\n                \"value\": 6,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 10\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"filterType\": \"Applied Search\",\n        \"funding\": {\n            \"lastFundingDate\": {\n                \"id\": 2,\n                \"tempId\": 0,\n                \"name\": \"In past 6 months\",\n                \"value\": 0,\n                \"type\": \"INCLUDE\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 10\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/search/v4/advanced-search",

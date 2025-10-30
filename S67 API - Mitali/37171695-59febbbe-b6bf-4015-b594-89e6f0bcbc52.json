@@ -1984,6 +1984,40 @@
 			"item": [
 				{
 					"name": "Get all locations",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "2f67068f-c148-4237-9d8f-4730bbd7190c",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Response has a valid structure\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property(\"status\");\r",
+									"    pm.expect(jsonData.status.statusCode).to.equal(200);\r",
+									"    pm.expect(jsonData).to.have.property(\"data\");\r",
+									"    pm.expect(jsonData.data).to.be.an(\"array\");\r",
+									"});\r",
+									"\r",
+									"pm.test(\"Each item contains required fields\", function () {\r",
+									"    const jsonData = pm.response.json();\r",
+									"    jsonData.data.forEach(item => {\r",
+									"        pm.expect(item).to.have.property(\"name\");\r",
+									"        pm.expect(item).to.have.property(\"source\");\r",
+									"     \r",
+									"    });\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "37171695-06672e66-0e46-4c84-9398-d9103b35821b",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -2007,9 +2041,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{base-urlqc3}}/search/v4/generic/location",
+							"raw": "{{base_Url}}/search/v4/generic/location",
 							"host": [
-								"{{base-urlqc3}}"
+								"{{base_Url}}"
 							],
 							"path": [
 								"search",

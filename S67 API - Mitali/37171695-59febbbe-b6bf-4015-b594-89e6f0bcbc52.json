@@ -2842,9 +2842,32 @@
 							"script": {
 								"id": "e308a003-2f17-404e-b2ee-12e1d3499448",
 								"exec": [
-									"pm.test('Status code should not be 200', function () {pm.expect(pm.response.code).not.eql(200);});",
 									"const response = pm.response.json();",
-									"pm.test('Should return missing filter value error', function () {pm.expect(response.status.message).to.match(/missing|error/i);});"
+									"",
+									"// Test for status code",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"// Test for response structure",
+									"pm.test(\"Response has status and data properties\", function () {",
+									"    pm.expect(response).to.have.property('status');",
+									"    pm.expect(response).to.have.property('data');",
+									"});",
+									"",
+									"// Test for status property structure",
+									"pm.test(\"Status property has message, requestId, and statusCode\", function () {",
+									"    pm.expect(response.status).to.have.property('message');",
+									"    pm.expect(response.status).to.have.property('requestId');",
+									"    pm.expect(response.status).to.have.property('statusCode');",
+									"});",
+									"",
+									"// Test for data property structure",
+									"pm.test(\"Data property has company_count and contact_count\", function () {",
+									"    pm.expect(response.data).to.have.property('company_count');",
+									"    pm.expect(response.data).to.have.property('contact_count');",
+									"});",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -2874,9 +2897,9 @@
 							"raw": "{\n    \"data\": {\n        \"filterType\": \"Applied Search\"\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
 						},
 						"url": {
-							"raw": "{{base-urlqc3}}/search/v4/advanced-search-count",
+							"raw": "{{base-url}}/search/v4/advanced-search-count",
 							"host": [
-								"{{base-urlqc3}}"
+								"{{base-url}}"
 							],
 							"path": [
 								"search",

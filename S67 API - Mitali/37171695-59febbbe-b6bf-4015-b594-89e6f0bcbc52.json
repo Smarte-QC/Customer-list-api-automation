@@ -1166,7 +1166,7 @@
 									"  pm.expect(res).to.be.an('object');\r",
 									"  pm.expect(res).to.have.property('data').that.is.an('object');\r",
 									"  pm.expect(res.data).to.have.property('pageSize');\r",
-									" pm.expect(res.data.pageSize).to.eql(10,25,50,100);\r",
+									" pm.expect(res.data.pageSize).to.eql(10);\r",
 									"});\r",
 									"\r",
 									"\r",

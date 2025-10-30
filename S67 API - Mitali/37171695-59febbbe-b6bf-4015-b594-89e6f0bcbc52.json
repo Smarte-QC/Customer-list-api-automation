@@ -2204,6 +2204,11 @@
 									"pm.test('Should return validation or missing field error', function () {pm.expect(response.status.message).to.match(/error|missing|invalid/i);});",
 									"pm.test(\"Response time is less than 1000ms\", function () {",
 									"  pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"});",
+									"// Test for status message and status code in response",
+									"pm.test(\"Status message and code are correct\", function () {",
+									"    pm.expect(response.status).to.have.property(\"message\", \"Success\");",
+									"    pm.expect(response.status).to.have.property(\"statusCode\", 200);",
 									"});"
 								],
 								"type": "text/javascript",

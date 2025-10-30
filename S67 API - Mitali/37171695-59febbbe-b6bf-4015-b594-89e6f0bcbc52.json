@@ -1132,6 +1132,59 @@
 				},
 				{
 					"name": "Save Page Size",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "e451497c-e64b-4ae9-b4ca-c00c7ac075c7",
+								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.equal(200);\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Response should contain a status object\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"\r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData).to.have.property('status').that.is.an('object');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Page size should be a number\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.exist;\r",
+									"    pm.expect(responseData.status.statusCode).to.be.a('number');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Page size is equal to 1\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.exist;\r",
+									"    pm.expect(responseData.status).to.have.property('statusCode', 0);\r",
+									"    pm.expect(responseData.status).to.have.property('requestId').that.is.a('string');\r",
+									"    pm.expect(responseData.status).to.have.property('message').that.is.a('string');\r",
+									"});\r",
+									"\r",
+									"\r",
+									"pm.test(\"Request ID must be a non-empty string\", function () {\r",
+									"    const responseData = pm.response.json();\r",
+									"    \r",
+									"    pm.expect(responseData).to.be.an('object');\r",
+									"    pm.expect(responseData.status).to.have.property('requestId').that.is.a('string').and.is.not.empty;\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {},
+								"requests": {}
+							}
+						}
+					],
 					"id": "37171695-42bb25f1-af51-480b-9541-214fc4c2ef91",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -1150,7 +1203,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"pagination\": {\r\n            \"pageSize\": 100\r\n        }\r\n}",
+							"raw": "{\r\n    \"pagination\": {\r\n            \"pageSize\": 10\r\n        }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

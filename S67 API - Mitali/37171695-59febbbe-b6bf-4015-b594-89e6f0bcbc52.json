@@ -2264,7 +2264,18 @@
 								"exec": [
 									"pm.test('Status code should not be 200', function () {pm.expect(pm.response.code).not.eql(200);});",
 									"const response = pm.response.json();",
-									"pm.test('Should indicate invalid value type error', function () {pm.expect(response.status.message).to.match(/invalid|error/i);});"
+									"pm.test('Status code should not be 200', function () {pm.expect(pm.response.code).not.eql(200);});",
+									"const response = pm.response.json();",
+									"pm.test('Should return validation or missing field error', function () {pm.expect(response.status.message).to.match(/error|missing|invalid/i);});",
+									"pm.test(\"Response time is less than 1000ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(1000);",
+									"});",
+									"// Test for status message and status code in response",
+									"pm.test(\"Status message and code are correct\", function () {",
+									"    pm.expect(response.status).to.have.property(\"message\", \"Required Fields Missing\");",
+									"    pm.expect(response.status).to.have.property(\"statusCode\", 400);",
+									"});",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},

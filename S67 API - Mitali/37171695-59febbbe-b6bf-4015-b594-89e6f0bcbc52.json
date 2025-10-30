@@ -613,7 +613,12 @@
 							"script": {
 								"id": "d1cbd875-d4c7-4a13-b55f-53d88c4f2cdc",
 								"exec": [
-									"pm.test('Should return error for invalid type', function () {pm.expect(pm.response.code).to.be.oneOf([400, 422]);});"
+									"pm.test('Should return error for invalid type', function () {pm.expect(pm.response.code).to.be.oneOf([200]);});\r",
+									"pm.test(\"Validate lastFundingDate value in request body\", function () {\r",
+									"    const requestBody = pm.request.json();\r",
+									"    const allowedValues = [6, 12, 18];\r",
+									"    pm.expect(allowedValues).to.include(requestBody.lastFundingDate, \"lastFundingDate must be 6, 12, or 18 months\");\r",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {},

@@ -2073,9 +2073,9 @@
 							"raw": "{\n    \"data\": {\n        \"value\": \"\"\n    },\n    \"type\": \"BY_REGION\",\n    \"pagination\": {\n        \"page_size\": 0,\n        \"page_no\": 1\n    }\n}"
 						},
 						"url": {
-							"raw": "{{base_Url}}/search/v4/generic/location",
+							"raw": "{{base-urlqc3}}/search/v4/generic/location",
 							"host": [
-								"{{base_Url}}"
+								"{{base-urlqc3}}"
 							],
 							"path": [
 								"search",

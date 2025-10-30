@@ -1609,12 +1609,9 @@
 							}
 						},
 						"url": {
-							"raw": "https://qc3-apigateway.smarte.pro/customer-list/v1/lead-list/retrieve-connections-image-url",
-							"protocol": "https",
+							"raw": "{{base-url}}/customer-list/v1/lead-list/retrieve-connections-image-url",
 							"host": [
-								"qc3-apigateway",
-								"smarte",
-								"pro"
+								"{{base-url}}"
 							],
 							"path": [
 								"customer-list",

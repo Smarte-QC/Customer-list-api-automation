@@ -1643,7 +1643,8 @@
 									"});"
 								],
 								"type": "text/javascript",
-								"packages": {}
+								"packages": {},
+								"requests": {}
 							}
 						}
 					],
@@ -1668,7 +1669,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": [\n        {\n            \"connectionName\": \"InvalidURLmaa\",\n            \"vendorId\": 1,\n            \"webhookUrl\": \"not-a-valid-url\",\n            \"status\": \"active\"\n        }\n    ]\n}",
+							"raw": "{\n    \"data\": {\n        \"id\": \"string-id\"\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1676,15 +1677,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{base-url}}/customer-list/v1/website-visitors/connection-create",
+							"raw": "{{base-url}}/customer-list/v1/lead-list/retrieve-connections-image-url",
 							"host": [
 								"{{base-url}}"
 							],
 							"path": [
 								"customer-list",
 								"v1",
-								"website-visitors",
-								"connection-create"
+								"lead-list",
+								"retrieve-connections-image-url"
 							]
 						}
 					},

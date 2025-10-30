@@ -1627,7 +1627,7 @@
 					"response": []
 				},
 				{
-					"name": "Add Connection - Invalid URL Format",
+					"name": "Invalid id Field",
 					"event": [
 						{
 							"listen": "test",

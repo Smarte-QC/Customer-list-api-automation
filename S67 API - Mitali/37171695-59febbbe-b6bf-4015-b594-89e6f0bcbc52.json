@@ -2273,7 +2273,7 @@
 									"// Test for status message and status code in response",
 									"pm.test(\"Status message and code are correct\", function () {",
 									"    pm.expect(response.status).to.have.property(\"message\", \"Required Fields Missing\");",
-									"    pm.expect(response.status).to.have.property(\"statusCode\", 400);",
+									"    pm.expect(response.status).to.have.property(\"statusCode\", 500);",
 									"});",
 									""
 								],

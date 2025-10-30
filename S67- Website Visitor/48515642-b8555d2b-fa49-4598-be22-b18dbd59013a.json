@@ -1524,7 +1524,7 @@
 			"name": "Error Scenarios - Invalid Inputs Copy",
 			"item": [
 				{
-					"name": "Add Connection - Missing Required Fields",
+					"name": "Retrieve connections images and count",
 					"event": [
 						{
 							"listen": "test",

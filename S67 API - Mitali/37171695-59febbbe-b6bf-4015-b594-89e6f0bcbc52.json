@@ -2270,9 +2270,9 @@
 							}
 						},
 						"url": {
-							"raw": "{{base_Url}}/search/v4/advanced-search",
+							"raw": "{{base-urlqc3}}/search/v4/advanced-search",
 							"host": [
-								"{{base_Url}}"
+								"{{base-urlqc3}}"
 							],
 							"path": [
 								"search",
@@ -2369,9 +2369,9 @@
 							"raw": "{\n    \"data\": {\n        \"filterType\": \"Applied Search\",\n        \"person_info\": {\n            \"location\": {\n                \"regions\": [\n                    {\n                        \"name\": \"North America\",\n                        \"source\": \"Region\",\n                        \"id\": \"North America\",\n                        \"type\": \"INCLUDE\"\n                    }\n                ],\n                \"type\": \"By Region\"\n            }\n        }\n    },\n    \"type\": \"ADVANCED_SEARCH_LEAD\",\n    \"pagination\": {\n        \"page_no\": 1,\n        \"page_size\": 50\n    }\n}"
 						},
 						"url": {
-							"raw": "{{base_Url}}/search/v4/advanced-search",
+							"raw": "{{base-urlqc3}}/search/v4/advanced-search",
 							"host": [
-								"{{base_Url}}"
+								"{{base-urlqc3}}"
 							],
 							"path": [
 								"search",

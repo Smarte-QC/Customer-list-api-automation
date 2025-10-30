@@ -1346,7 +1346,7 @@
 									"const response = pm.response.json();",
 									"pm.test('Response message is Success', function () {pm.expect(response.status.message).to.eql('Success');});",
 									"pm.test('Data should be an array of GUIDs', function () {pm.expect(response.data).to.be.an('array');});",
-									"pm.test('All GUIDs should be strings of length 32', function () {",
+									"pm.test('All GUIDs should be strings of length 32 or lenght 16', function () {",
 									"   response.data.forEach(function(guid) {pm.expect(guid).to.match(/^[A-F0-9]{32}$/);});",
 									"});"
 								],

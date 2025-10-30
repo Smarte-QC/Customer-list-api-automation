@@ -1531,12 +1531,48 @@
 							"script": {
 								"id": "2d56f9d0-ad8a-407d-9328-4637cf09cf3e",
 								"exec": [
-									"pm.test(\"Missing fields returns error\", function () {",
-									"    pm.expect(pm.response.code).to.be.oneOf([500]);",
-									"});",
 									"pm.test(\"Response time is less than 200ms\", function () {",
 									"    pm.expect(pm.response.responseTime).to.be.below(200);",
-									"});"
+									"});",
+									"",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.equal(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response contains a 'status' object\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData).to.have.property('status');",
+									"});",
+									"",
+									"",
+									"pm.test(\"RequestId in the status object should be a string\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.status).to.exist;",
+									"    pm.expect(responseData.status.RequestId).to.be.a('string');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Status message should be 'Success'\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.have.property('status');",
+									"    pm.expect(responseData.status).to.have.property('Message', 'Success');",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response should contain a 'Data' object with an 'images' array\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.have.property('Data').that.is.an('object');",
+									"    pm.expect(responseData.Data).to.have.property('images').that.is.an('array');",
+									"});",
+									"",
+									""
 								],
 								"type": "text/javascript",
 								"packages": {},
@@ -1565,7 +1601,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": [\n        {\n            \"connectionName\": \"TestConnection\"\n            // Missing vendorId, webhookUrl, status\n        }\n    ]\n}",
+							"raw": "{\n    \"data\": {\n        \"id\": 1\n    }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1573,7 +1609,7 @@
 							}
 						},
 						"url": {
-							"raw": "https://qc3-apigateway.smarte.pro/customer-list/v1/website-visitors/connection-create",
+							"raw": "https://qc3-apigateway.smarte.pro/customer-list/v1/lead-list/retrieve-connections-image-url",
 							"protocol": "https",
 							"host": [
 								"qc3-apigateway",
@@ -1583,8 +1619,8 @@
 							"path": [
 								"customer-list",
 								"v1",
-								"website-visitors",
-								"connection-create"
+								"lead-list",
+								"retrieve-connections-image-url"
 							]
 						}
 					},

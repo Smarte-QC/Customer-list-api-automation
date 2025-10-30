@@ -769,6 +769,8 @@
 									"// Allowed page sizes",
 									"const ALLOWED = new Set([10, 25, 50, 100]);",
 									"",
+									"pm.test('Response time is under 300ms', function () {pm.expect(pm.response.responseTime).to.be.below(300);});",
+									"",
 									"// Try to read the pageSize that was sent",
 									"let sentPageSize = null;",
 									"let requestIsMalformed = false;",

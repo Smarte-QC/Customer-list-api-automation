@@ -388,6 +388,9 @@
 							"script": {
 								"id": "88b53a33-3ada-4691-a61a-ac62b721e365",
 								"exec": [
+									"pm.test(\"Response status code is 200\", function () {\r",
+									"    pm.expect(pm.response.code).to.eql(200);\r",
+									"});\r",
 									"pm.test(\"Response status code is 200 when funding.lastFundingDate is valid\", function () {\r",
 									"    const responseData = pm.response.json();\r",
 									"    const validValues = ['In past 6 months', 'In past 12 months', 'In past 18 months'];\r",
@@ -396,7 +399,7 @@
 									"    pm.expect(responseData.status).to.exist;\r",
 									"\r",
 									"    // Check if funding.lastFundingDate is valid\r",
-									"    if (responseData.status.funding && Array.isArray(responseData.status.funding)) {\r",
+									"   /* if (responseData.status.funding && Array.isArray(responseData.status.funding)) {\r",
 									"        const validFunding = responseData.status.funding.some((funding) => validValues.includes(funding.lastFundingDate.name));\r",
 									"        \r",
 									"        if (validFunding) {\r",

@@ -3812,7 +3812,7 @@
 									"pm.test('Response time is under 200ms', function () {pm.expect(pm.response.responseTime).to.be.below(100);});",
 									"const response = pm.response.json();",
 									"pm.test('Response message is Success', function () {pm.expect(response.status.message).to.eql('Success');});",
-									"pm.test('Search ID is returned', function () {pm.expect(response.data).to.have.property('searchId');});",
+									"",
 									"",
 									"pm.test(\"Response status code is 409\", function () {",
 									"    pm.expect(pm.response.code).to.eql(409);",

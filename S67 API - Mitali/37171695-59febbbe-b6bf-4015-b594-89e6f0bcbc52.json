@@ -3970,7 +3970,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"name\": \"sdasds\",\n        \"filterJson\": {\n            \"person_info\": {\n                \"location\": {\n                    \"regions\": [\n                        {\n                            \"name\": \"\",\n                            \"source\": \"Region\",\n                            \"id\": \"\",\n                            \"type\": \"INCLUDE\"\n                        }\n                    ],\n                    \"type\": \"By Region\"\n                }\n            }\n        }\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"name\": \"sdasds\",\n        \"filterJson\": {\n            \"person_info\": {\n                \"location\": {\n                    \"regions\": [\n                        {\n                            \"name\": \"InvalidRegion\",\n                            \"source\": \"Region\",\n                            \"id\": \"InvalidRegion\",\n                            \"type\": \"INCLUDE\"\n                        }\n                    ],\n                    \"type\": \"By Region\"\n                }\n            }\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/customer-data/v2/contact-filter/v2/search-lead",

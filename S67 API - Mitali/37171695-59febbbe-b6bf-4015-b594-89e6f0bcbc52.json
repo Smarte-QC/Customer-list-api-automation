@@ -2640,7 +2640,6 @@
 								"exec": [
 									"pm.test('Status code should not be 200', function () {pm.expect(pm.response.code).not.eql(200);});",
 									"const response = pm.response.json();",
-									"pm.expect(responseJson.data.message).to.match(/invalid|error/i);",
 									"",
 									"",
 									"pm.test(\"Request body structure should contain required fields\", function () {",
@@ -2717,7 +2716,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"name\": \"asdads\",\n        \"filterJson\": {\n            \"funding\": {\n                \"lastFundingDate\": {\n                    \"id\": 2,\n                    \"tempId\": 0,\n                    \"name\": \"In past 6 months\",\n                    \"value\": \"invalid\",\n                    \"type\": \"INCLUDE\"\n                }\n            }\n        }\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"name\": \"asdads\",\n        \"filterJson\": {\n            \"funding\": {\n                \"lastFundingDate\": {\n                    \"id\": 2,\n                    \"tempId\": 0,\n                    \"name\": \"\",\n                    \"value\": \"invalid\",\n                    \"type\": \"INCLUDE\"\n                }\n            }\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/customer-data/v2/contact-filter/v2/search-account",

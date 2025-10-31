@@ -1521,7 +1521,7 @@
 			"id": "48515642-ff320248-794b-460a-8b5f-dd8ae3d18def"
 		},
 		{
-			"name": "Error Scenarios - Invalid Inputs Copy",
+			"name": "retrieve-connections-image-url",
 			"item": [
 				{
 					"name": "Retrieve connections images and count",

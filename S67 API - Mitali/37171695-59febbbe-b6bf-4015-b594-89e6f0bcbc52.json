@@ -2716,7 +2716,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"data\": {\n        \"name\": \"asdads\",\n        \"filterJson\": {\n            \"funding\": {\n                \"lastFundingDate\": {\n                    \"id\": 2,\n                    \"tempId\": 0,\n                    \"name\": \"\",\n                    \"value\": \"invalid\",\n                    \"type\": \"INCLUDE\"\n                }\n            }\n        }\n    }\n}"
+							"raw": "{\n    \"data\": {\n        \"name\": \"asdads\",\n        \"filterJson\": {\n            \"funding\": {\n                \"lastFundingDate\": {\n                    \"id\": 2,\n                    \"tempId\": 0,\n                    \"name\": ,\n                    \"value\": \"invalid\",\n                    \"type\": \"INCLUDE\"\n                }\n            }\n        }\n    }\n}"
 						},
 						"url": {
 							"raw": "{{base-urlqc3}}/customer-data/v2/contact-filter/v2/search-account",

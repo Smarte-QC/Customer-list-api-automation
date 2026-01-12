@@ -4412,6 +4412,18 @@
 				"description": "Generated from cURL: curl --request POST \\\n  --url http://qaapi.smarteinc.com/v7/enrich \\\n  --header 'Content-Type: application/json' \\\n  --header 'apikey: a98001ce-df1d-4e86-b7d6-316b64d53ec5' \\\n  --data '{\n\t\"recordId\": \"\",\n\t\"companyGuid\": \"\",\n\t\"companyName\": \"\",\n\t\"companyWebAddress\": \"\",\n\t\"contactId\": \"\",\n\t\"contactFullName\": \"\",\n\t\"contactFirstName\": \"\",\n\t\"contactLastName\": \"\",\n\t\"contactMiddleName\": \"\",\n\t\"contactEmail\": \"komal.patil@smarte.pro\",\n\t\"contactCountry\": \"\",\n\t\"contactJobTitle\": \"\",\n\t\"contactState\": \"\",\n\t\"contactZipcode\": \"\",\n\t\"contactGuid\": \"\",\n\t\"phone\": \"\",\n\t\"contactUrl\": \"\",\n\t\"piid\": \"\",\n\t\"accountId\": \"\",\n\t\"objectType\": \"\"\n}'"
 			},
 			"response": []
+		},
+		{
+			"name": "New Request",
+			"id": "37171695-9d0d1a13-2fd4-4297-81d6-045d04b69f4e",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }

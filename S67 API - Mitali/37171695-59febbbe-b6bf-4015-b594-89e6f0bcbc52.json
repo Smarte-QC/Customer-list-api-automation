@@ -4432,10 +4432,25 @@
 				"disableBodyPruning": true
 			},
 			"request": {
-				"method": "GET",
-				"header": [],
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "ZWxhc3RpYzppNGplSD1OdUZFT09tVipsalN6UQ==",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\"query\": {\r\n        \"bool\": {\r\n            \"must\": [\r\n                {\r\n                    \"terms\": {\r\n                        \"pc_con_guid\": [\r\n                            \"0BA2639FBC710DC8AD8C6A1D96AF89A5\"\r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                            \r\n                        ]\r\n                    }\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}' \\\r\n  --auth-basic-username 'elastic' \\\r\n  --auth-basic-password 'i4jeH=NuFEOOmV*ljSzQ'",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://10.0.93.2:9200/ig_con_sep_2025/_search'",
+					"raw": "http://10.0.93.2:9200/ig_con_sep_2025/_search",
 					"protocol": "http",
 					"host": [
 						"10",
@@ -4446,7 +4461,7 @@
 					"port": "9200",
 					"path": [
 						"ig_con_sep_2025",
-						"_search'"
+						"_search"
 					]
 				}
 			},

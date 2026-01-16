@@ -4424,6 +4424,33 @@
 				"header": []
 			},
 			"response": []
+		},
+		{
+			"name": "http://10.0.93.2:9200/ig_con_sep_2025/_search'",
+			"id": "37171695-aab42f39-a114-4f27-ba20-2f3a5de79333",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://10.0.93.2:9200/ig_con_sep_2025/_search'",
+					"protocol": "http",
+					"host": [
+						"10",
+						"0",
+						"93",
+						"2"
+					],
+					"port": "9200",
+					"path": [
+						"ig_con_sep_2025",
+						"_search'"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }

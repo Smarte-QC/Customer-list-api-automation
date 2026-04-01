@@ -501,7 +501,8 @@
 							""
 						],
 						"type": "text/javascript",
-						"packages": {}
+						"packages": {},
+						"requests": {}
 					}
 				}
 			],
@@ -520,7 +521,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": 19903,\r\n            \"listName\": \"Tracked Accounts\",\r\n            \"guids\": [\r\n                \"53A15A01E32C8428\"\r\n            ],\r\n            \"type\": \"HANDPICKED\",\r\n            \"isTrack\": false,\r\n            \"defaultTracked\": true\r\n        }\r\n    ]\r\n}",
+					"raw": "{\r\n    \"data\": [\r\n        {\r\n            \"id\": 3722,\r\n            \"listName\": \"My Tracked Accounts\",\r\n            \"guids\": [\r\n                \"195E756C4C6F25C1\"\r\n            ],\r\n            \"type\": \"HANDPICKED\",\r\n            \"defaultTracked\": true\r\n        }\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -528,9 +529,9 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/customer-list/v1/account-list/account-list-save",
+					"raw": "{{base-url}}/customer-list/v1/account-list/account-list-save",
 					"host": [
-						"{{baseUrl}}"
+						"{{base-url}}"
 					],
 					"path": [
 						"customer-list",
